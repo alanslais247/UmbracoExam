@@ -1,0 +1,6 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/umbMaster.master" AutoEventWireup="true" %>
+
+<asp:Content ContentPlaceHolderID="MasterContentPlaceHolder" runat="server">
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+	WWWWWWWWWWWWWWWWWWWWWWWWWWWW
+</asp:Content>

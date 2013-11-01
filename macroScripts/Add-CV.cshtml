@@ -1,0 +1,49 @@
+﻿@using System.Linq;
+@using WebMatrix.Data;
+	
+	
+@{
+
+  var firstname = "";
+  var lastname = "";
+  var email = "";
+  var phone = "";
+  var studyprogramme = "";
+  
+	if(IsPost)
+	{
+	
+	firstname = Request["firstname"];
+	lastname = Request["lastname"];
+	email = Request["email"];
+	phone = Request["phone"];
+	studyprogramme = Request["studyprogramme"];
+	
+		
+	var db = Database.Open("UmbracoExam");
+	var SQLINSERT = "insert into student(firstname, lastname, email, phone, studyprogramme) values(@0, @1, @2, @3, @4)";
+	db.Execute(SQLINSERT, firstname, lastname, email, phone, studyprogramme);
+	
+	} 
+
+}
+
+<h3> Add your Curriculum Vitae</h3>
+	
+	<fieldset>
+	
+<p>  
+	First name: </br> <input type="text" name="firstname"/></br>
+	Last name: </br> <input type="text" name="lastname"/></br>
+	Email: </br> <input type="text" name="email"/></br>
+	Phone: </br> <input type="text" name="phone"/></br>
+	Study programme: </br> <input type="text" name="studyprogramme"/></br>
+     
+     
+		
+	<input type="submit" name="Add CV"/>
+	
+</p>
+		
+		
+	</fieldset>

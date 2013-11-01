@@ -1,0 +1,34 @@
+﻿@using System.Linq;
+@using WebMatrix.Data;
+
+
+@{
+   var db=Database.Open("UmbracoExam");
+   var students = db.Query("Select * From student");
+
+}
+<div>
+	
+	
+
+@foreach( var stud in students )
+	
+{
+	
+	
+	<li>
+		
+	<p> <a href="#"> <b> StudentName: </b>  @stud.firstname  @stud.lastname <br/>  <b>StudentEmail: </b> @stud.email<br/>  
+		 <b>StudyProgramme: </b> @stud.studyprogramme   </a> </p>
+		
+	</li>
+			 
+
+			
+}
+
+<a href="Add-CV"> <b><i>Add a new Student CV</i> </b></a>
+
+
+
+</div>
